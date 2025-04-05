@@ -1,0 +1,58 @@
+# NumPy ve Pandas Özet Kodları
+# Ödev 1 için hazırlanmıştır.
+
+# NumPy - Numerical Python
+import numpy as np
+
+# 1. NumPy ile dizi (array) oluşturma
+array1 = np.array([1, 2, 3, 4, 5])
+print("NumPy Array:", array1)
+
+# 2. NumPy ile sıfırlardan oluşan dizi
+zeros_array = np.zeros((3, 3))
+print("3x3 Sıfırlardan oluşan dizi:\n", zeros_array)
+
+# 3. NumPy ile rastgele sayılar
+random_array = np.random.rand(2, 2)
+print("2x2 Rastgele sayı matrisi:\n", random_array)
+
+# 4. NumPy ile temel işlemler
+array2 = np.array([10, 20, 30, 40, 50])
+print("Toplam:", np.sum(array2))
+print("Ortalama:", np.mean(array2))
+print("Maksimum:", np.max(array2))
+
+# -------------------------------------------------------------------
+
+# Pandas - Veri Analizi için
+import pandas as pd
+
+# 5. Pandas ile Seri (Series) oluşturma
+data = [10, 20, 30, 40]
+seri = pd.Series(data, index=["a", "b", "c", "d"])
+print("\nPandas Series:\n", seri)
+
+# 6. Pandas ile DataFrame oluşturma
+veri = {
+    "İsim": ["Ali", "Veli", "Ayşe"],
+    "Yaş": [25, 30, 22],
+    "Şehir": ["İstanbul", "Ankara", "İzmir"]
+}
+df = pd.DataFrame(veri)
+print("\nPandas DataFrame:\n", df)
+
+# 7. DataFrame Bilgileri
+print("\nDataFrame Bilgileri:")
+print(df.info())
+
+# 8. DataFrame'de seçim işlemleri
+print("\nSadece İsimler Kolonu:")
+print(df["İsim"])
+
+# 9. Filtreleme örneği
+print("\n30 yaşından büyükler:")
+print(df[df["Yaş"] > 25])
+
+# 10. CSV dosyası kaydetme
+df.to_csv("ornek_veri.csv", index=False)
+print("\nDataFrame 'ornek_veri.csv' dosyasına kaydedildi.")
